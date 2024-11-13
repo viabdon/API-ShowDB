@@ -1,0 +1,20 @@
+{
+	"dependencies": {
+		"@prisma/client": "^5.22.0",
+		"fastify": "^5.1.0",
+		"mysql2": "^3.11.4",
+		"prisma": "^5.22.0",
+		"typescript": "^5.6.3"
+	},
+	"name": "api-showdb",
+	"version": "1.0.0",
+	"description": "A simple API only for getting the informartion from a MySQL database using Prisma ORM and Node.js with Fastify framework.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
