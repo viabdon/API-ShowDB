@@ -1,6 +1,7 @@
 {
 	"dependencies": {
 		"@prisma/client": "^5.22.0",
+		"api-showdb": "file:",
 		"fastify": "^5.1.0",
 		"mysql2": "^3.11.4",
 		"prisma": "^5.22.0",
