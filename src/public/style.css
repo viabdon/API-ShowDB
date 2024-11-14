@@ -1,0 +1,78 @@
+/* Reset de estilo básico */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5; /* Cor de fundo suave */
+	color: #333; /* Texto escuro para boa legibilidade */
+	line-height: 1.6;
+	padding: 20px;
+}
+
+h1,
+h2 {
+	color: #444; /* Cor um pouco mais clara para os títulos */
+	margin-bottom: 15px;
+}
+
+label {
+	font-size: 16px;
+	color: #555; /* Cor de texto para o rótulo */
+	margin-right: 10px;
+}
+
+input[type='date'] {
+	padding: 8px;
+	font-size: 16px;
+	margin-right: 10px;
+	border: 1px solid #ccc; /* Borda suave */
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+button {
+	padding: 8px 15px;
+	font-size: 16px;
+	border: none;
+	background-color: #007bff; /* Cor de fundo do botão */
+	color: #fff; /* Texto branco no botão */
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3; /* Cor mais escura do botão ao passar o mouse */
+}
+
+#results {
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para o container */
+}
+
+#resultsTable {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+#resultsTable th,
+#resultsTable td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd; /* Borda sutil entre as células */
+}
+
+#resultsTable th {
+	background-color: #f0f0f0; /* Fundo suave para os títulos das colunas */
+}
+
+#resultsTable tr:hover {
+	background-color: #f9f9f9; /* Efeito de hover nas linhas */
+}
