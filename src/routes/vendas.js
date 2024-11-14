@@ -43,8 +43,8 @@ async function getVendas(request, reply) {
 		// Map the raw query results to the desired output format
 		const formattedResults = result.map((item) => ({
 			Data: item.DATA,
-			Inicio_Turno: item.HIDA,
-			Fim_Turno: item.HVOLTA,
+			Inicio: item.HIDA,
+			Fim: item.HVOLTA,
 			Usuario: item.XUSU,
 			Num_Disp: item.NDISP,
 			Numero: item.NUMERO,
@@ -52,7 +52,7 @@ async function getVendas(request, reply) {
 			SEQG: item.SEQG,
 		}));
 
-		// Respond with the formatted data
+		// Responde com os dados formatados
 		reply.send(formattedResults);
 	} catch (err) {
 		console.error('Error executing query:', err);
@@ -62,7 +62,6 @@ async function getVendas(request, reply) {
 	}
 }
 
-// Export the function to be registered in Fastify
 export default async function (fastify) {
 	fastify.get('/vendas', getVendas);
 }
