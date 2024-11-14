@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Pesquisa de Vendas</title>
+	</head>
+	<body>
+		<h1>Pesquisa de Vendas</h1>
+
+		<!-- Formulário de data -->
+		<label for="date">Selecione a data: </label>
+		<input
+			type="date"
+			id="date"
+			name="date"
+			required
+		/>
+		<button onclick="fetchVendas()">Pesquisar</button>
+
+		<!-- Resultados da pesquisa -->
+		<div id="results">
+			<h2>Resultados da Pesquisa:</h2>
+			<table id="resultsTable">
+				<thead>
+					<tr>
+						<th>SEQG</th>
+						<th>NUM_DISP</th>
+						<th>NUMERO</th>
+						<th>DATA</th>
+						<th>SITUACAO</th>
+						<th>INICIO TURNO</th>
+						<th>FIM TURNO</th>
+						<th>USUARIO</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
