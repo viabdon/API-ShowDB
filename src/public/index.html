@@ -20,7 +20,8 @@
 			name="date"
 			required
 		/>
-		<button onclick="fetchVendas()">Pesquisar</button>
+		<button id='dayButton' onclick="fetchVendas(event)">Pesquisar no Dia</button>
+		<button id='monthButton' onclick="fetchVendas(event)">Pesquisar no mes</button>
 
 		<!-- Resultados da pesquisa -->
 		<div id="results">

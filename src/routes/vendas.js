@@ -3,14 +3,14 @@ const prisma = new PrismaClient();
 
 // GET para vendas
 async function getVendas(request, reply) {
-	const { date } = request.query; // Expecting date as a query parameter
+	const { dateStart, dateEnd } = request.query; // Coleta a data como query parameter na URL
 
-	if (!date) {
+	if (!dateStart || !dateEnd) {
 		return reply.status(400).send({ error: 'Data é obrigatória.' });
 	}
 
 	try {
-		// Execute the raw SQL query
+		// Executa a query SQL bruta
 		const result = await prisma.$queryRaw`
       SELECT 
         VIACAB.SEQG, 
@@ -36,11 +36,11 @@ async function getVendas(request, reply) {
       INNER JOIN BALSA ON VIACAB.BALSA = BALSA.CODIGO
       LEFT JOIN USU ON VIACAB.FISCAL = USU.CODIGO
       INNER JOIN USU USU2 ON VIACAB.USU = USU2.CODIGO
-      WHERE VIACAB.DATA = ${date} 
+      WHERE VIACAB.DATA >= ${dateStart} AND VIACAB.DATA <= ${dateEnd}
       ORDER BY VIACAB.NDISP, VIACAB.DATA, VIACAB.HRCAD;
     `;
 
-		// Map the raw query results to the desired output format
+		// Mapeia os resultados num novo array para mostrá-los na tela
 		const formattedResults = result.map((item) => ({
 			Data: item.DATA,
 			Inicio: item.HIDA,
@@ -52,7 +52,7 @@ async function getVendas(request, reply) {
 			SEQG: item.SEQG,
 		}));
 
-		// Responde com os dados formatados
+		// Responde o protocolo HTTP com os dados formatados
 		reply.send(formattedResults);
 	} catch (err) {
 		console.error('Error executing query:', err);
@@ -62,6 +62,7 @@ async function getVendas(request, reply) {
 	}
 }
 
+//Exporta a rota para o servidor fastify
 export default async function (fastify) {
 	fastify.get('/vendas', getVendas);
 }
