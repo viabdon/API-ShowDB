@@ -9,7 +9,7 @@ async function fetchVendas(event) {
 		let dateStart;
 		let dateEnd;
 
-        // Identifica se o usuário deseja apenas as vendas do dia, ou do mês inteiro e muda as datas conforme necessário
+		// Identifica se o usuário deseja apenas as vendas do dia, ou do mês inteiro e muda as datas conforme necessário
 		if (event.target.id == 'monthButton') {
 			dateStart = `${date.split('-')[0]}-${date.split('-')[1]}-01`;
 			dateEnd = `${date.split('-')[0]}-${parseInt(date.split('-')[1]) + 1}-01`;
@@ -18,7 +18,7 @@ async function fetchVendas(event) {
 			dateEnd = date;
 		}
 
-		// Faz a requisição GET ao servidor 
+		// Faz a requisição GET ao servidor
 		const response = await fetch(
 			`http://127.0.0.1:3000/vendas?dateStart=${dateStart}&dateEnd=${dateEnd}`
 		);
@@ -56,6 +56,9 @@ async function fetchVendas(event) {
                 <td>${item.Fim}</td>
                 <td>${item.Usuario}</td>
 				<td>${printDate(item.Data)}</td>
+                <td>
+                    <button onclick="gerarRelatorio(button)">GERAR RELATIRIO</button>
+                </td>
             `;
 			tableBody.appendChild(row);
 		});
@@ -71,4 +74,10 @@ async function fetchVendas(event) {
 function printDate(dateString) {
 	const date = dateString.split('-');
 	return `${date[2][0] + date[2][1]}/${date[1]}/${date[0]}`; // Retorna a data no formato "dd/MM/yyyy"
+}
+
+async function gerarRelatorio(button) {
+	const row = button.closest('tr');
+    const dataCells = row.querySelectorAll(".data-cell");
+	alert(`Gerando Relatório no SEQG ${dataCells[0].textContent}`);
 }
