@@ -31,7 +31,7 @@ async function fetchVendas(event) {
 		// Faz o parse do JSON
 		const data = await response.json();
 
-		console.log(data); // Log para confirmar que os dados foram recebidos corretamente
+		// console.log(data); // Log para confirmar que os dados foram recebidos corretamente
 
 		// Limpa a tabela para mostrar dados novos
 		const tableBody = document.querySelector('#resultsTable tbody');
@@ -57,7 +57,7 @@ async function fetchVendas(event) {
                 <td>${item.Usuario}</td>
 				<td>${printDate(item.Data)}</td>
                 <td>
-                    <button onclick="gerarRelatorio(button)">GERAR RELATIRIO</button>
+                    <button onclick="gerarRelatorio(event)">GERAR RELATIRIO</button>
                 </td>
             `;
 			tableBody.appendChild(row);
@@ -76,8 +76,11 @@ function printDate(dateString) {
 	return `${date[2][0] + date[2][1]}/${date[1]}/${date[0]}`; // Retorna a data no formato "dd/MM/yyyy"
 }
 
-async function gerarRelatorio(button) {
-	const row = button.closest('tr');
-    const dataCells = row.querySelectorAll(".data-cell");
-	alert(`Gerando Relatório no SEQG ${dataCells[0].textContent}`);
+function gerarRelatorio(event) {
+	try {
+	//	const dataCells = event.target.parentNode.parentNode.querySelectorAll('td');
+	//	alert(`Gerando Relatório no SEQG ${dataCells[0].textContent}`);
+	} catch (error) {
+		console.log('Erro ao gerar relatório:', error);
+	}
 }
