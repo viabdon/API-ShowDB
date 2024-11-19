@@ -3,13 +3,13 @@ import fastifyCors from 'fastify-cors';  // Importa o CORS plugin
 
 const app = fastify({ logger: true });  // Cria a instância do servidor Fastify
 
-// Registra as portas de origem para permitir compartilhamento de recursos entre os servidores
+// Registra as portas de origem para permitir compartilhamento de recursos entre os servidores locais
 app.register(fastifyCors, {
   origin: "*", 
   methods: ['GET'], // Solicitações HTTP permitidas
 });
 
-// Use import para carregar suas rotas
+// Carregando Rotas
 import vendasRoutes from './routes/vendas.js'; 
 
 // Registrando a rota criada em ./routes/viacab.js

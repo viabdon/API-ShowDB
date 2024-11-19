@@ -7,20 +7,30 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Pesquisa de Vendas</title>
-        <link rel="stylesheet" href="style.css">
+		<link
+			rel="stylesheet"
+			href="style.css"
+		/>
 	</head>
 	<body>
 		<h1>Pesquisa de Vendas</h1>
 
 		<!-- Formulário de data -->
-		<label for="date">Selecione a data: </label>
+		<label for="date">Selecione a data inicial: </label>
 		<input
 			type="date"
-			id="date"
-			name="date"
+			id="dateStart"
+			name="dateStart"
 			required
 		/>
-		<button onclick="fetchVendas()">Pesquisar</button>
+		<label for="date">Selecione a data final: </label>
+		<input
+			type="date"
+			id="dateEnd"
+			name="dateEnd"
+			required
+		/>
+		<button onclick="fetchVendas()">Pesquisar Período</button>
 
 		<!-- Resultados da pesquisa -->
 		<div id="results">
