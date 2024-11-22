@@ -11,9 +11,11 @@ app.register(fastifyCors, {
 
 // Use import para carregar suas rotas
 import vendasRoutes from './routes/vendas.js'; 
+import relatorioRoutes from './routes/relatorio.js';
 
 // Registrando a rota criada em ./routes/viacab.js
 app.register(vendasRoutes);
+app.register(relatorioRoutes);
 
 // Inicia o servidor
 const start = async () => {

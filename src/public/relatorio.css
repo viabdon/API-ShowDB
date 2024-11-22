@@ -1,33 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    color: #000;
+	font-family: Arial, sans-serif;
+	margin: 20px;
+	padding: 0;
+	color: #000;
 }
 .container {
-    width: 800px;
-    margin: 0 auto;
+	width: 800px;
+	margin: 0 auto;
 }
-.header, .footer {
-    text-align: right;
+.header,
+.footer {
+	text-align: right;
 }
 .header h1 {
-    text-align: left;
+	text-align: left;
 }
 .highlight {
-    background-color: #f9f9f9;
-    font-weight: bold;
+	background-color: #f9f9f9;
+	font-weight: bold;
 }
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
 }
-th, td {
-    border: 1px solid #000;
-    padding: 5px;
-    text-align: center;
+th,
+td {
+	border: 1px solid #000;
+	padding: 5px;
+	text-align: center;
 }
 .summary {
-    margin-top: 20px;
+	margin-top: 20px;
 }
